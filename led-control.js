@@ -1,15 +1,44 @@
 // import 'onoff' package
 const { Gpio } = require( 'onoff' );
 
+const { env } = require('process');
+
 // configure LED pins
-const pin_red = new Gpio( 26, 'out' );
-const pin_yellow = new Gpio( 19, 'out' );
-const pin_green = new Gpio( 13, 'out' );
-const pin_buzz = new Gpio( 6, 'out' );
+// set defaults
+var red_gpio = env.LED_RED_GPIO;
+if (!red_gpio) {
+  red_gpio = 26;
+}
+
+var yellow_gpio = env.LED_YELLOW_GPIO;
+if (!yellow_gpio) {
+  yellow_gpio = 19;
+}
+
+var green_gpio = env.LED_GREEN_GPIO;
+if (!green_gpio) {
+  green_gpio = 13;
+}
+
+var buzz_gpio = env.LED_BUZZ_GPIO;
+if (!buzz_gpio) {
+  buzz_gpio = 6;
+}
+
+const pin_red = new Gpio( red_gpio, 'out' );
+const pin_yellow = new Gpio( yellow_gpio, 'out' );
+const pin_green = new Gpio( green_gpio, 'out' );
+const pin_buzz = new Gpio( buzz_gpio, 'out' );
 
 // set to logic level that turns on LEDs
-const pin_high = Gpio.LOW;
-const pin_low = Gpio.HIGH;
+var my_high = Gpio.LOW;
+var my_low = Gpio.HIGH;
+if (env.LED_RELAY_HIGH == 1) {
+  my_high = Gpio.HIGH;
+  my_low = Gpio.LOW;
+} 
+const pin_high = my_high;
+const pin_low = my_low;
 
 // toggle LED states
 exports.toggle = ( c, b ) => {
