@@ -5,22 +5,22 @@ const {env} = require('process');
 
 
 var uuid = env.RESIN_DEVICE_UUID;
-var device = env.MY_NAME;
+var device = env.LED_MY_NAME;
 if (!device) {
   device = env.BALENA_DEVICE_NAME_AT_INIT;
 }
 
-var red_label = env.RED_LABEL;
+var red_label = env.LED_RED_LABEL;
 if (!red_label) {
   red_label = 'Red';
 }
 
-var yellow_label = env.YELLOW_LABEL;
+var yellow_label = env.LED_YELLOW_LABEL;
 if (!yellow_label) {
   yellow_label = 'Yellow';
 }
 
-var green_label = env.GREEN_LABEL;
+var green_label = env.LED_GREEN_LABEL;
 if (!green_label) {
   green_label = 'Green';
 }
