@@ -42,7 +42,7 @@ For those that have spare parts lying around, you could build this project on a 
 * [Dupont cables](https://www.amazon.com/dp/B077NH83CJ) aka “Jumper Jerky” for wiring
 
 ## Software required
-This project has been built to run in a Docker container on balenaCloud, so you can deploy it in only a few steps as outlined below. (For a more detailed guide, see the [blog post](https://www.balena.io/blog/build-an-led-alerter-for-your-remote-work-office-setup/).
+This project has been built to run in a Docker container on balenaCloud, so you can deploy it in only a few steps as outlined below. (For a more detailed guide, see the [blog post](https://www.balena.io/blog/build-an-led-alerter-for-your-remote-work-office-setup/).)
 * A download of the [project from GitHub](https://github.com/balena-io-playground/LED-Alerter)
 * Software to flash the SD card ([balenaEtcher](https://www.balena.io/etcher/))
 * A free [balenaCloud account]( https://dashboard.balena-cloud.com/signup) to set up and manage the Pi
@@ -65,7 +65,7 @@ Your project should now be wired and ready to go; make one last check against th
 
 
 ## Set up the software
-The balenaCloud platform will take care of providing a lightweight OS for your device as well as deploying the web application so just follow along with the steps below on your development computer (not on your Raspberry Pi). Follow these steps regardless of whether you assembled the elaborate tower or are using an LED HAT.
+The balenaCloud platform will take care of providing a lightweight OS for your device as well as deploying the web application. You can see detailed steps for setting up the software in [this post](https://www.balena.io/blog/build-an-led-alerter-for-your-remote-work-office-setup/) or a general [getting started doc](https://www.balena.io/docs/learn/getting-started/raspberrypi3/nodejs/).
 
 ## Configuration and use
 If you followed the wiring diagram and “elaborate” build steps above, you should see the green LED light up a few minutes after you push the code. If not, go ahead and re-check all of your connections and software setup steps.
