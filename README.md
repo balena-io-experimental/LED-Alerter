@@ -16,12 +16,12 @@ Here are a couple of examples:
 Here is the remainder of the parts list:
 
 
-A 5V 4 channel relay board or HAT: [(Amazon)](https://www.amazon.com/PiRelay-EXPANSION-RASPBERRY-Raspberry-Components/dp/B077LV4F1B/ref=sr_1_5?keywords=relay+hat&qid=1585456712&sr=8-5), [another on (Amazon)](https://www.amazon.com/JBtek-Channel-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_7?keywords=relay+hat&qid=1585456712&sr=8-7), [or this (AliExpress)](https://www.aliexpress.com/item/32918136701.html). 
-A 12V 3A DC power supply [(Amazon)](https://www.amazon.com/PiRelay-EXPANSION-RASPBERRY-Raspberry-Components/dp/B077LV4F1B/ref=sr_1_5?keywords=relay+hat&qid=1585456712&sr=8-5)
-A “female DC barrel connector” with screw terminals, if not included with power supply: [(AdaFruit)](https://www.adafruit.com/product/368), [(AliExpress)](https://www.aliexpress.com/item/4000749006888.html)
-A 12V DC/DC power converter with micro USB connector: [(AliExpress)](https://www.aliexpress.com/item/32958965769.html), [(Amazon)](https://www.amazon.com/dp/B01MEESLZ6) Or [USB-C](https://www.amazon.com/gp/product/B07ZQB6S3L/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) for the Pi4
-[Dupont cables](https://www.amazon.com/dp/B077NH83CJ) aka “Jumper Jerky” for wiring
-Optional but recommended: Two position terminal block or barrier strip [(Amazon)](https://www.amazon.com/NTE-Electronics-25-B600-02-25-B600-Terminal/dp/B0084LH514) or [Wago connectors](https://www.aliexpress.com/item/4000801547709.html)  
+* A 5V 4 channel relay board or HAT: [(Amazon)](https://www.amazon.com/PiRelay-EXPANSION-RASPBERRY-Raspberry-Components/dp/B077LV4F1B/ref=sr_1_5?keywords=relay+hat&qid=1585456712&sr=8-5), [another on (Amazon)](https://www.amazon.com/JBtek-Channel-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_7?keywords=relay+hat&qid=1585456712&sr=8-7), [or this (AliExpress)](https://www.aliexpress.com/item/32918136701.html). 
+* A 12V 3A DC power supply [(Amazon)]( https://www.amazon.com/gp/product/B07VQGHSWY)
+* A “female DC barrel connector” with screw terminals, if not included with power supply: [(AdaFruit)](https://www.adafruit.com/product/368), [(AliExpress)](https://www.aliexpress.com/item/4000749006888.html)
+* A 12V DC/DC power converter with micro USB connector: [(AliExpress)](https://www.aliexpress.com/item/32958965769.html), [(Amazon)](https://www.amazon.com/dp/B01MEESLZ6) Or [USB-C](https://www.amazon.com/gp/product/B07ZQB6S3L/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) for the Pi4
+* [Dupont cables](https://www.amazon.com/dp/B077NH83CJ) aka “Jumper Jerky” for wiring
+* Optional but recommended: Two position terminal block or barrier strip [(Amazon)](https://www.amazon.com/NTE-Electronics-25-B600-02-25-B600-Terminal/dp/B0084LH514) or [Wago connectors](https://www.aliexpress.com/item/4000801547709.html)  
 
 Finally, we’ll need a Raspberry Pi, preferably with WiFi. The Pi Zero WH is recommended, but this project will work well with any model.
 
@@ -32,20 +32,22 @@ If you’re looking for a less elaborate build you can find HATs for the Raspber
 
 ### Tinkerer build
 For those that have spare parts lying around, you could build this project on a breadboard with:
-Three LEDs, preferably red green and yellow, but any color will work
-Three 200 - 1000 (1k) ohm resistors
-A Raspberry Pi per the table above, along with a 5V micro USB (or USB C for Pi 4) power supply and SD card
-[Dupont cables](https://www.amazon.com/dp/B077NH83CJ) aka “Jumper Jerky” for wiring
+* Three LEDs, preferably red green and yellow, but any color will work
+* Three 200 - 1000 (1k) ohm resistors
+* A Raspberry Pi per the table above, along with a 5V micro USB (or USB C for Pi 4) power supply and SD card
+* [Dupont cables](https://www.amazon.com/dp/B077NH83CJ) aka “Jumper Jerky” for wiring
 
 ## Software required
-This project has been built to run in a Docker container on balenaCloud, so you can deploy it in only a few steps as outlined below.
+This project has been built to run in a Docker container on balenaCloud, so you can deploy it in only a few steps as outlined below. (For a more detailed guide, see the [blog post](https://www.balena.io/blog/build-an-led-alerter-for-your-remote-work-office-setup/).
 * A download of the [project from GitHub](https://github.com/balena-io-playground/LED-Alerter)
 * Software to flash the SD card ([balenaEtcher](https://www.balena.io/etcher/))
-* A free balenaCloud account to set up and manage the Pi
-* A download and installation of the balenaCLI to be installed on your development computer used to push code to the cloud
+* A free [balenaCloud account]( https://dashboard.balena-cloud.com/signup) to set up and manage the Pi
+* A download and installation of the [balenaCLI](https://github.com/balena-io/balena-cli/blob/master/INSTALL.md) to be installed on your development computer used to push code to the cloud
 
 ## Set up the hardware
 If you opted for the easier build, your setup is simply to attach the LED HAT to your Raspberry Pi using the instructions provided with the HAT. There may be some jumpers to set the GPIO pins, but you can probably leave those in their default position. Just note the GPIO number that is assigned to each LED and the buzzer; we’ll need that information for the software setup in the next section.
+
+![](https://github.com/balena-io-playground/LED-Alerter/blob/master/img/wiring-diagram.png?raw=true)
 
 Using the wiring diagram above as an overall guide, first make the connections between your Raspberry Pi pins and relay board. (If you have a relay HAT, you merely need to attach the HAT instead.) 
 
