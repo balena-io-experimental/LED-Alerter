@@ -1,8 +1,12 @@
 # LED-Alerter
 This project is a web-controlled set of LEDs that you can use whenever you need to send a visual signal of your availability to someone in the next room (or on the other side of the world). For an in-depth tutorial on this project, check out [this blog post](https://www.balena.io/blog/build-an-led-alerter-for-your-remote-work-office-setup/).
 
+![](https://github.com/balena-io-playground/LED-Alerter/blob/master/img/DND_lights_GIF-3.gif?raw=true)
+
 ## Hardware Required
 ### An elaborate build
+
+![](https://github.com/balena-io-playground/LED-Alerter/blob/master/img/LED-traffic-light.png?raw=true)
 
 To create a real attention-getter, you’ll want to acquire one of these industrial LED towers as your signalling device. They range in price from $20 to $35 dollars and usually include an integrated buzzer. To be consistent with the parts below, make sure you get a 12V DC tower.
 
