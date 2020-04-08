@@ -40,7 +40,7 @@ if (env.LED_RELAY_HIGH == 1) {
 const pin_high = my_high;
 const pin_low = my_low;
 
-// toggle LED states
+// change LED state
 exports.toggle = ( c, b ) => {
 
   pin_buzz.writeSync( b ? pin_high : pin_low );
