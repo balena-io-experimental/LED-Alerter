@@ -28,18 +28,17 @@ if (!green_label) {
 console.log(uuid);
 
 // import LED control API
-const { toggle } = require( './led-control' );
-const { red_led_state } = require( './led-control' );
-const { yellow_led_state } = require( './led-control' );
-const { green_led_state } = require( './led-control' );
+const { toggle } = require( './leds' );
+const { red_led_state } = require( './leds' );
+const { yellow_led_state } = require( './leds' );
+const { green_led_state } = require( './leds' );
 
 // create an express app
 const app = express();
 
 // send 'index.html' from the current directory
-// when 'http://<ip>/' route is accessed using 'GET' method
 app.get( '/', ( request, response ) => {
-  response.sendFile( path.resolve( __dirname, 'web-app/index.html' ), {
+  response.sendFile( path.resolve( __dirname, 'src/index.html' ), {
     headers: {
       'Content-Type': 'text/html',
     }
@@ -47,7 +46,7 @@ app.get( '/', ( request, response ) => {
 } );
 
 // send asset files
-app.use( '/assets/', express.static( path.resolve( __dirname, 'web-app' ) ) );
+app.use( '/assets/', express.static( path.resolve( __dirname, 'src' ) ) );
 app.use( '/assets/', express.static( path.resolve( __dirname, 'node_modules/socket.io-client/dist' ) ) );
 
 // server listens on port 80
@@ -61,7 +60,7 @@ const io = socketIO( server );
 
 // listen for connection
 io.on( 'connection', ( client ) => {
-  console.log( 'SOCKET: ', 'A client connected', client.id );
+  console.log( 'Socket client connection:', client.id );
   client.emit('intro', { message: uuid, id: client.id, devname: device, r_label: red_label, y_label: yellow_label, g_label: green_label });
   client.emit('led-status', { r: red_led_state(), y: yellow_led_state(), g: green_led_state() }); // transmit the LED status to this client
 
