@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LED Alerter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/style.css"/>
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="content">
+      
+        <h1>LED Alerter</h1>
+        <h2>"<span id="topline"></span>"</h2>
+     
+        <p>&nbsp;</p>
+        <p><input type="checkbox" id="check-buzz"> Use the buzzer</p>
+      
+         
+    	<div class="btn-group btn-group-fill">
+          <button class="btn-danger" id="button-red">Red</button>
+          <button class="btn-warning" id="button-yellow">Yellow</button>
+          <button class="btn-success" id="button-green">Green</button>
+        </div>
+     
+        <p>&nbsp;</p>
+        <p><span id="myuuid" style="color:#CBCBCB;"></span></p>
+    </div>
+<span id="test"></span>
+
+      
+         
+    <!-- scripts -->
+    <script src="/assets/socket.io.js"></script>
+    <script src="/assets/main.js"></script>
+    
+    
+  </body>
+</html>
