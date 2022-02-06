@@ -25,10 +25,16 @@ if (!buzz_gpio) {
   buzz_gpio = 6;
 }
 
+var connect_gpio = env.LED_CONNECT_GPIO;
+if (!connect_gpio) {
+  connect_gpio = 5;
+}
+
 const pin_red = new Gpio( red_gpio, 'out' );
 const pin_yellow = new Gpio( yellow_gpio, 'out' );
 const pin_green = new Gpio( green_gpio, 'out' );
 const pin_buzz = new Gpio( buzz_gpio, 'out' );
+const pin_connect = new Gpio( connect_gpio, 'out' );
 
 // set to logic level that turns on LEDs
 var my_high = Gpio.LOW;
@@ -83,6 +89,16 @@ exports.toggle = ( c, b ) => {
   pin_buzz.writeSync(1);
 
 };
+
+// Connection LED
+exports.led_connect = ( c ) => {
+
+  if( c == 1 ) {
+    pin_connect.writeSync( Gpio.HIGH );
+  } else {
+    pin_connect.writeSync( Gpio.LOW );
+  }
+}
 
 // read LED states
 exports.red_led_state = ( ) => {
