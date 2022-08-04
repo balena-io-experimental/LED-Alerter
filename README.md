@@ -106,6 +106,9 @@ A button will display “(On!)” if that color LED is currently lit. This can b
 ### Connection LED
 GPIO 5 will go high when one or more socket connections are made, and low when there are no socket connections. You can connect an LED to this pin (using a resistor and the other side to ground) to include a nice "connection" indicator on your device. You can change the default GPIO using the device variable `LED_CONNECT_GPIO`.
 
+### Client device
+If you prefer hardware buttons to control your LED Alerter, check out the [LED Alerter Client project](https://github.com/alanb128/alerter-client).
+
 ## Taking it further
 The LED Alerter can be enhanced with many features to make it even more useful for letting others know when you are busy or don’t want to be disturbed. It could be synced to a calendar for automatic operation. Another possibility is to link it with e-mail or chat to trigger LED changes. The project is [fully open source](https://github.com/balena-io-playground/LED-Alerter) and we welcome any contributions from the community to help improve it; no matter if it’s submitting a bug report, a feature request or even a PR with new code. The balenaCloud platform is optimized for fleet operations, so having one Alerter control many devices or controlling many devices with one Alerter would be an interesting feature to implement.
 
